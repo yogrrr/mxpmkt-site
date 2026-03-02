@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing Digital que Gera Resultados Reais | MXP Digital</title>
-    <meta name="description" content="Aumente suas vendas em até 300% com nossas estratégias comprovadas de marketing digital. 500+ empresas atendidas, R$ 2,5M em vendas geradas, 9 anos de experiência.">
+    <title>Agentes de IA Personalizados & Marketing Digital | MXP Digital</title>
+    <meta name="description" content="Criamos agentes de IA sob medida para o seu negócio. Automação inteligente, análise preditiva e campanhas otimizadas. 500+ empresas atendidas, R$ 2,5M em vendas geradas.">
     
     <!-- Meta Pixel Code -->
     <script>
@@ -117,6 +117,37 @@
                 background-position: calc(200px + 100%) 0;
             }
         }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.2);
+            }
+        }
+
+        @keyframes nodeFloat {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(5px, -8px); }
+            50% { transform: translate(-3px, -12px); }
+            75% { transform: translate(-7px, -4px); }
+        }
+
+        @keyframes dataFlow {
+            0% { stroke-dashoffset: 20; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
         
         /* Container principal */
         .mxp-site {
@@ -147,8 +178,6 @@
             pointer-events: none !important;
         }
         
-
-        
         .mxp-container {
             max-width: 1200px !important;
             margin: 0 auto !important;
@@ -159,21 +188,24 @@
         
         /* Header clean e elegante */
         .mxp-header {
-            padding: 2rem 0 !important;
+            padding: 1.5rem 0 !important;
             backdrop-filter: blur(20px) !important;
             background: rgba(15, 23, 42, 0.8) !important;
             border-bottom: 1px solid rgba(59, 130, 246, 0.2) !important;
             animation: fadeInUp 1s ease-out !important;
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 100 !important;
         }
         
         .mxp-header-content {
             display: flex !important;
-            justify-content: center !important;
+            justify-content: space-between !important;
             align-items: center !important;
         }
         
         .mxp-logo {
-            height: 5rem !important;
+            height: 4rem !important;
             width: auto !important;
             animation: float 3s ease-in-out infinite !important;
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) !important;
@@ -184,20 +216,101 @@
             transform: scale(1.1) !important;
             filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4)) !important;
         }
+
+        .mxp-nav {
+            display: flex !important;
+            gap: 2rem !important;
+            align-items: center !important;
+        }
+
+        .mxp-nav a {
+            color: rgba(255, 255, 255, 0.8) !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+            font-size: 0.95rem !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+        }
+
+        .mxp-nav a:hover {
+            color: #60a5fa !important;
+        }
+
+        .mxp-nav a::after {
+            content: '' !important;
+            position: absolute !important;
+            bottom: -4px !important;
+            left: 0 !important;
+            width: 0 !important;
+            height: 2px !important;
+            background: #60a5fa !important;
+            transition: width 0.3s ease !important;
+        }
+
+        .mxp-nav a:hover::after {
+            width: 100% !important;
+        }
+
+        .mxp-nav-cta {
+            background: linear-gradient(45deg, #1e40af, #3b82f6) !important;
+            color: white !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .mxp-nav-cta:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4) !important;
+        }
         
         /* Hero Section com efeitos avançados */
         .mxp-hero {
-            padding: 8rem 0 !important;
-            text-align: center !important;
+            padding: 6rem 0 4rem !important;
             color: white !important;
             position: relative !important;
         }
+
+        .mxp-hero-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 4rem !important;
+            align-items: center !important;
+        }
+
+        .mxp-hero-content {
+            text-align: left !important;
+        }
+
+        .mxp-hero-badge {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            background: rgba(59, 130, 246, 0.15) !important;
+            border: 1px solid rgba(59, 130, 246, 0.3) !important;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: 50px !important;
+            font-size: 0.85rem !important;
+            color: #93c5fd !important;
+            margin-bottom: 1.5rem !important;
+            animation: fadeInUp 1s ease-out !important;
+        }
+
+        .mxp-hero-badge-dot {
+            width: 8px !important;
+            height: 8px !important;
+            background: #3b82f6 !important;
+            border-radius: 50% !important;
+            animation: pulse 2s infinite !important;
+        }
         
         .mxp-hero h1 {
-            font-size: 4.5rem !important;
+            font-size: 3.5rem !important;
             font-weight: 800 !important;
-            margin-bottom: 2rem !important;
-            line-height: 1.1 !important;
+            margin-bottom: 1.5rem !important;
+            line-height: 1.15 !important;
             color: white !important;
             animation: fadeInUp 1s ease-out 0.3s both !important;
             text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
@@ -212,25 +325,159 @@
             background-clip: text !important;
             display: inline-block !important;
         }
+
+        .mxp-gradient-text-gold {
+            background: linear-gradient(45deg, #f59e0b, #fbbf24, #fcd34d) !important;
+            background-size: 300% 300% !important;
+            animation: gradientShift 4s ease infinite !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            display: inline-block !important;
+        }
         
         .mxp-hero p {
-            font-size: 1.5rem !important;
-            margin-bottom: 3rem !important;
+            font-size: 1.2rem !important;
+            margin-bottom: 2rem !important;
             max-width: 50rem !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            color: rgba(255, 255, 255, 0.9) !important;
+            color: rgba(255, 255, 255, 0.85) !important;
             animation: fadeInUp 1s ease-out 0.6s both !important;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+            line-height: 1.7 !important;
         }
+
+        .mxp-hero-buttons {
+            display: flex !important;
+            gap: 1rem !important;
+            flex-wrap: wrap !important;
+            animation: fadeInUp 1s ease-out 0.9s both !important;
+        }
+
+        /* Hero Visual - Agente de IA Animado */
+        .mxp-hero-visual {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            animation: fadeInRight 1s ease-out 0.5s both !important;
+        }
+
+        .mxp-agent-demo {
+            background: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(20px) !important;
+            border: 1px solid rgba(59, 130, 246, 0.3) !important;
+            border-radius: 20px !important;
+            padding: 2rem !important;
+            width: 100% !important;
+            max-width: 420px !important;
+            animation: glowPulse 3s ease-in-out infinite !important;
+        }
+
+        .mxp-agent-header {
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.75rem !important;
+            margin-bottom: 1.5rem !important;
+            padding-bottom: 1rem !important;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2) !important;
+        }
+
+        .mxp-agent-avatar {
+            width: 40px !important;
+            height: 40px !important;
+            background: linear-gradient(45deg, #3b82f6, #60a5fa) !important;
+            border-radius: 12px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 1.2rem !important;
+        }
+
+        .mxp-agent-info h4 {
+            color: white !important;
+            font-size: 0.95rem !important;
+            font-weight: 600 !important;
+        }
+
+        .mxp-agent-info span {
+            color: #22c55e !important;
+            font-size: 0.75rem !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.3rem !important;
+        }
+
+        .mxp-agent-status-dot {
+            width: 6px !important;
+            height: 6px !important;
+            background: #22c55e !important;
+            border-radius: 50% !important;
+            animation: pulse 2s infinite !important;
+        }
+
+        .mxp-agent-messages {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.75rem !important;
+        }
+
+        .mxp-agent-msg {
+            padding: 0.75rem 1rem !important;
+            border-radius: 12px !important;
+            font-size: 0.85rem !important;
+            line-height: 1.5 !important;
+            max-width: 85% !important;
+            animation: fadeInUp 0.5s ease-out both !important;
+        }
+
+        .mxp-agent-msg.bot {
+            background: rgba(59, 130, 246, 0.15) !important;
+            border: 1px solid rgba(59, 130, 246, 0.2) !important;
+            color: #93c5fd !important;
+            align-self: flex-start !important;
+        }
+
+        .mxp-agent-msg.user {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: rgba(255, 255, 255, 0.9) !important;
+            align-self: flex-end !important;
+        }
+
+        .mxp-agent-msg.bot.highlight {
+            background: rgba(34, 197, 94, 0.15) !important;
+            border: 1px solid rgba(34, 197, 94, 0.3) !important;
+            color: #86efac !important;
+        }
+
+        .mxp-agent-msg:nth-child(1) { animation-delay: 0.5s !important; }
+        .mxp-agent-msg:nth-child(2) { animation-delay: 1.5s !important; }
+        .mxp-agent-msg:nth-child(3) { animation-delay: 2.5s !important; }
+        .mxp-agent-msg:nth-child(4) { animation-delay: 3.5s !important; }
+
+        .mxp-agent-typing {
+            display: flex !important;
+            gap: 4px !important;
+            padding: 0.75rem 1rem !important;
+            align-self: flex-start !important;
+        }
+
+        .mxp-agent-typing span {
+            width: 6px !important;
+            height: 6px !important;
+            background: #60a5fa !important;
+            border-radius: 50% !important;
+            animation: pulse 1.5s infinite !important;
+        }
+
+        .mxp-agent-typing span:nth-child(2) { animation-delay: 0.2s !important; }
+        .mxp-agent-typing span:nth-child(3) { animation-delay: 0.4s !important; }
         
         /* Botões com efeitos modernos */
         .mxp-btn-primary {
             background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa) !important;
             background-size: 300% 300% !important;
             color: white !important;
-            padding: 1.25rem 3rem !important;
-            font-size: 1.25rem !important;
+            padding: 1.1rem 2.5rem !important;
+            font-size: 1.1rem !important;
             font-weight: 600 !important;
             border: none !important;
             border-radius: 50px !important;
@@ -240,7 +487,6 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
             position: relative !important;
             overflow: hidden !important;
-            animation: fadeInUp 1s ease-out 0.9s both !important;
             box-shadow: 0 8px 32px rgba(30, 64, 175, 0.3) !important;
         }
         
@@ -268,21 +514,205 @@
         .mxp-btn-primary:active {
             transform: translateY(-1px) scale(1.02) !important;
         }
-        
-        /* Stats Section com animações */
-        .mxp-stats {
+
+        .mxp-btn-secondary {
+            background: transparent !important;
+            color: white !important;
+            padding: 1.1rem 2.5rem !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+            border-radius: 50px !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .mxp-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 255, 255, 0.6) !important;
+            transform: translateY(-2px) !important;
+            color: white !important;
+            text-decoration: none !important;
+        }
+
+        /* ============================================ */
+        /* SEÇÃO DESTAQUE - AGENTES DE IA               */
+        /* ============================================ */
+        .mxp-ai-agents {
             padding: 6rem 0 !important;
             position: relative !important;
+            overflow: hidden !important;
         }
-        
-        .mxp-stats h2 {
+
+        .mxp-ai-agents::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: linear-gradient(180deg, transparent 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%) !important;
+            pointer-events: none !important;
+        }
+
+        .mxp-section-label {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            background: rgba(59, 130, 246, 0.1) !important;
+            border: 1px solid rgba(59, 130, 246, 0.25) !important;
+            padding: 0.4rem 1rem !important;
+            border-radius: 50px !important;
+            font-size: 0.8rem !important;
+            color: #93c5fd !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            font-weight: 600 !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .mxp-ai-agents-header {
+            text-align: center !important;
+            margin-bottom: 4rem !important;
+        }
+
+        .mxp-ai-agents-header h2 {
             font-size: 3rem !important;
             font-weight: 700 !important;
             color: white !important;
-            text-align: center !important;
-            margin-bottom: 4rem !important;
-            animation: fadeInUp 1s ease-out !important;
+            margin-bottom: 1.5rem !important;
             text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .mxp-ai-agents-header p {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 1.2rem !important;
+            max-width: 700px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            line-height: 1.7 !important;
+        }
+
+        /* Card principal do Agente de IA */
+        .mxp-agent-showcase {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 3rem !important;
+            align-items: center !important;
+            margin-bottom: 4rem !important;
+        }
+
+        .mxp-agent-showcase-content h3 {
+            font-size: 2rem !important;
+            font-weight: 700 !important;
+            color: white !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        .mxp-agent-showcase-content p {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 1.05rem !important;
+            line-height: 1.7 !important;
+            margin-bottom: 2rem !important;
+        }
+
+        .mxp-agent-features {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 1rem !important;
+            margin-bottom: 2rem !important;
+        }
+
+        .mxp-agent-feature {
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 0.75rem !important;
+        }
+
+        .mxp-agent-feature-icon {
+            width: 32px !important;
+            height: 32px !important;
+            min-width: 32px !important;
+            background: rgba(59, 130, 246, 0.15) !important;
+            border: 1px solid rgba(59, 130, 246, 0.3) !important;
+            border-radius: 8px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 0.9rem !important;
+        }
+
+        .mxp-agent-feature-text {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-size: 0.95rem !important;
+            line-height: 1.5 !important;
+        }
+
+        .mxp-agent-feature-text strong {
+            color: white !important;
+        }
+
+        /* Oportunidades de Negócio */
+        .mxp-opportunities {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 1.5rem !important;
+        }
+
+        .mxp-opportunity-card {
+            background: rgba(15, 23, 42, 0.6) !important;
+            backdrop-filter: blur(20px) !important;
+            border-radius: 16px !important;
+            padding: 2rem !important;
+            border: 1px solid rgba(59, 130, 246, 0.2) !important;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+            text-align: center !important;
+        }
+
+        .mxp-opportunity-card:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(59, 130, 246, 0.4) !important;
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2) !important;
+        }
+
+        .mxp-opportunity-icon {
+            width: 56px !important;
+            height: 56px !important;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.2)) !important;
+            border-radius: 14px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 1.5rem !important;
+            margin: 0 auto 1.2rem !important;
+        }
+
+        .mxp-opportunity-card h4 {
+            color: white !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            margin-bottom: 0.75rem !important;
+        }
+
+        .mxp-opportunity-card p {
+            color: rgba(255, 255, 255, 0.7) !important;
+            font-size: 0.9rem !important;
+            line-height: 1.5 !important;
+        }
+
+        .mxp-opportunity-stat {
+            color: #60a5fa !important;
+            font-size: 1.5rem !important;
+            font-weight: 800 !important;
+            margin-top: 0.75rem !important;
+        }
+        
+        /* Stats Section com animações */
+        .mxp-stats {
+            padding: 4rem 0 !important;
+            position: relative !important;
         }
         
         .mxp-stats-grid {
@@ -296,7 +726,7 @@
             background: rgba(15, 23, 42, 0.6) !important;
             backdrop-filter: blur(20px) !important;
             border-radius: 16px !important;
-            padding: 2.5rem 1.5rem !important;
+            padding: 2rem 1.5rem !important;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
             border: 1px solid rgba(59, 130, 246, 0.2) !important;
             position: relative !important;
@@ -332,10 +762,15 @@
         .mxp-stat-card:nth-child(3) { animation-delay: 0.3s !important; }
         .mxp-stat-card:nth-child(4) { animation-delay: 0.4s !important; }
         
+        .mxp-stat-icon {
+            font-size: 2rem !important;
+            margin-bottom: 0.75rem !important;
+        }
+
         .mxp-stat-number {
-            font-size: 3.5rem !important;
+            font-size: 2.5rem !important;
             font-weight: 800 !important;
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.5rem !important;
             transition: all 0.3s ease !important;
         }
         
@@ -344,26 +779,26 @@
             text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
         }
         
-        .mxp-stat-number.pink { 
+        .mxp-stat-number.blue { 
             color: #3b82f6 !important; 
             text-shadow: 0 0 20px rgba(59, 130, 246, 0.5) !important;
         }
-        .mxp-stat-number.blue { 
+        .mxp-stat-number.cyan { 
             color: #60a5fa !important; 
             text-shadow: 0 0 20px rgba(96, 165, 250, 0.5) !important;
         }
-        .mxp-stat-number.purple { 
+        .mxp-stat-number.light { 
             color: #93c5fd !important; 
             text-shadow: 0 0 20px rgba(147, 197, 253, 0.5) !important;
         }
-        .mxp-stat-number.green { 
-            color: #1e40af !important; 
-            text-shadow: 0 0 20px rgba(30, 64, 175, 0.5) !important;
+        .mxp-stat-number.gold { 
+            color: #fbbf24 !important; 
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.5) !important;
         }
         
         .mxp-stat-label {
             color: rgba(255, 255, 255, 0.9) !important;
-            font-size: 1.1rem !important;
+            font-size: 0.95rem !important;
             font-weight: 500 !important;
         }
         
@@ -446,10 +881,10 @@
             transition: all 0.3s ease !important;
         }
         
-        .mxp-service-number.pink { color: #3b82f6 !important; }
-        .mxp-service-number.blue { color: #60a5fa !important; }
-        .mxp-service-number.purple { color: #93c5fd !important; }
-        .mxp-service-number.green { color: #1e40af !important; }
+        .mxp-service-number.blue { color: #3b82f6 !important; }
+        .mxp-service-number.cyan { color: #60a5fa !important; }
+        .mxp-service-number.light { color: #93c5fd !important; }
+        .mxp-service-number.gold { color: #fbbf24 !important; }
         
         .mxp-service-title {
             font-size: 1.5rem !important;
@@ -539,22 +974,23 @@
         }
         
         .mxp-cta h2 {
-            font-size: 3.5rem !important;
+            font-size: 3rem !important;
             font-weight: 800 !important;
             color: white !important;
-            margin-bottom: 2rem !important;
+            margin-bottom: 1.5rem !important;
             animation: fadeInUp 1s ease-out !important;
             text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
         }
         
         .mxp-cta p {
-            font-size: 1.3rem !important;
+            font-size: 1.2rem !important;
             color: rgba(255, 255, 255, 0.9) !important;
             margin-bottom: 2rem !important;
             max-width: 40rem !important;
             margin-left: auto !important;
             margin-right: auto !important;
             animation: fadeInUp 1s ease-out 0.2s both !important;
+            line-height: 1.7 !important;
         }
         
         .mxp-cta-highlight {
@@ -605,46 +1041,41 @@
         .mxp-btn-white:hover::before {
             left: 100% !important;
         }
-        
-        /* Chat Widget com animações */
-        .mxp-chat-widget {
-            position: fixed !important;
-            bottom: 2rem !important;
-            right: 2rem !important;
-            background: linear-gradient(45deg, #10b981, #059669) !important;
-            color: white !important;
-            width: 4.5rem !important;
-            height: 4.5rem !important;
-            border-radius: 50% !important;
+
+        /* Footer */
+        .mxp-footer {
+            background: rgba(15, 23, 42, 0.95) !important;
+            padding: 3rem 0 !important;
+            border-top: 1px solid rgba(59, 130, 246, 0.2) !important;
+        }
+
+        .mxp-footer-content {
             display: flex !important;
+            justify-content: space-between !important;
             align-items: center !important;
-            justify-content: center !important;
-            font-size: 1.8rem !important;
-            cursor: pointer !important;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-            z-index: 1000 !important;
-            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3) !important;
-            animation: float 3s ease-in-out infinite !important;
+            flex-wrap: wrap !important;
+            gap: 1rem !important;
         }
-        
-        .mxp-chat-widget:hover {
-            background: linear-gradient(45deg, #059669, #047857) !important;
-            transform: scale(1.15) !important;
-            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4) !important;
+
+        .mxp-footer-text {
+            color: rgba(255, 255, 255, 0.6) !important;
+            font-size: 0.9rem !important;
         }
-        
-        .mxp-chat-widget::before {
-            content: '' !important;
-            position: absolute !important;
-            top: -2px !important;
-            left: -2px !important;
-            right: -2px !important;
-            bottom: -2px !important;
-            background: linear-gradient(45deg, #10b981, #059669, #047857, #10b981) !important;
-            background-size: 300% 300% !important;
-            border-radius: 50% !important;
-            z-index: -1 !important;
-            animation: gradientShift 3s ease infinite !important;
+
+        .mxp-footer-links {
+            display: flex !important;
+            gap: 1.5rem !important;
+        }
+
+        .mxp-footer-links a {
+            color: rgba(255, 255, 255, 0.6) !important;
+            text-decoration: none !important;
+            font-size: 0.9rem !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .mxp-footer-links a:hover {
+            color: #60a5fa !important;
         }
         
         /* Scroll reveal animations */
@@ -659,14 +1090,14 @@
             transform: translateY(0) !important;
         }
         
-        /* Responsive para desktop */
+        /* Responsive */
         @media (max-width: 1200px) {
             .mxp-container {
                 padding: 0 1.5rem !important;
             }
             
             .mxp-hero h1 {
-                font-size: 3.5rem !important;
+                font-size: 3rem !important;
             }
             
             .mxp-stats-grid {
@@ -674,6 +1105,33 @@
             }
         }
         
+        @media (max-width: 968px) {
+            .mxp-hero-grid {
+                grid-template-columns: 1fr !important;
+                gap: 3rem !important;
+            }
+
+            .mxp-hero-content {
+                text-align: center !important;
+            }
+
+            .mxp-hero-buttons {
+                justify-content: center !important;
+            }
+
+            .mxp-agent-showcase {
+                grid-template-columns: 1fr !important;
+            }
+
+            .mxp-opportunities {
+                grid-template-columns: 1fr !important;
+            }
+
+            .mxp-nav {
+                display: none !important;
+            }
+        }
+
         @media (max-width: 768px) {
             .mxp-services-grid {
                 grid-template-columns: 1fr !important;
@@ -681,6 +1139,23 @@
             
             .mxp-stats-grid {
                 grid-template-columns: 1fr !important;
+            }
+
+            .mxp-hero h1 {
+                font-size: 2.2rem !important;
+            }
+
+            .mxp-ai-agents-header h2 {
+                font-size: 2rem !important;
+            }
+
+            .mxp-cta h2 {
+                font-size: 2rem !important;
+            }
+
+            .mxp-hero-buttons {
+                flex-direction: column !important;
+                align-items: center !important;
             }
         }
     </style>
@@ -696,6 +1171,12 @@
                     <div>
                         <img src="wp-content/plugins/mxp-digital-responsive/logo-mxp.png" alt="MXP Digital" class="mxp-logo" />
                     </div>
+                    <nav class="mxp-nav">
+                        <a href="#agentes-ia">Agentes de IA</a>
+                        <a href="#solucoes">Soluções</a>
+                        <a href="#resultados">Resultados</a>
+                        <a href="https://wa.me/19289686271?text=Olá! Gostaria de saber mais sobre os serviços de IA da MXP Digital." target="_blank" class="mxp-nav-cta">Fale Conosco</a>
+                    </nav>
                 </div>
             </div>
         </header>
@@ -703,54 +1184,219 @@
         <!-- Hero Section -->
         <section class="mxp-hero">
             <div class="mxp-container">
-                <h1>
-                    Marketing Digital com 
-                    <span class="mxp-gradient-text">Inteligência Artificial</span>
-                </h1>
-                <p>
-                    Revolucione seu negócio com IA aplicada ao marketing digital. Automação inteligente, 
-                    análise preditiva e campanhas otimizadas por algoritmos que geram resultados reais.
-                </p>
-                <a href="https://wa.me/19289686271?text=Olá! Gostaria de descobrir como a IA pode transformar meu marketing digital." class="mxp-btn-primary" target="_blank">🤖 Descobrir o Poder da IA</a>
+                <div class="mxp-hero-grid">
+                    <div class="mxp-hero-content">
+                        <div class="mxp-hero-badge">
+                            <div class="mxp-hero-badge-dot"></div>
+                            Novo: Agentes de IA sob medida para o seu negócio
+                        </div>
+                        <h1>
+                            <span class="mxp-gradient-text">Agentes de IA</span> que Trabalham pelo seu Negócio 24/7
+                        </h1>
+                        <p>
+                            Criamos agentes de inteligência artificial personalizados que automatizam processos, 
+                            atendem clientes, analisam dados e geram oportunidades reais de crescimento para a sua empresa.
+                        </p>
+                        <div class="mxp-hero-buttons">
+                            <a href="https://wa.me/19289686271?text=Olá! Quero saber como um agente de IA personalizado pode transformar meu negócio." class="mxp-btn-primary" target="_blank">Criar meu Agente de IA</a>
+                            <a href="#agentes-ia" class="mxp-btn-secondary">Como funciona?</a>
+                        </div>
+                    </div>
+                    <div class="mxp-hero-visual">
+                        <div class="mxp-agent-demo">
+                            <div class="mxp-agent-header">
+                                <div class="mxp-agent-avatar">🤖</div>
+                                <div class="mxp-agent-info">
+                                    <h4>Agente MXP</h4>
+                                    <span><div class="mxp-agent-status-dot"></div> Online agora</span>
+                                </div>
+                            </div>
+                            <div class="mxp-agent-messages">
+                                <div class="mxp-agent-msg bot">Olá! Sou o agente de IA da sua empresa. Identifiquei 12 novos leads qualificados hoje.</div>
+                                <div class="mxp-agent-msg user">Qual o perfil desses leads?</div>
+                                <div class="mxp-agent-msg bot">São empresas do setor de tecnologia, com faturamento acima de R$ 500K. Já iniciei o contato automatizado com 8 deles.</div>
+                                <div class="mxp-agent-msg bot highlight">📊 Resultado: 3 reuniões agendadas para esta semana!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Stats Section -->
-        <section class="mxp-stats">
+        <section class="mxp-stats" id="resultados">
             <div class="mxp-container">
-                <h2>IA Transformando Negócios Reais</h2>
                 <div class="mxp-stats-grid">
                     <div class="mxp-stat-card">
-                        <div class="mxp-stat-number pink">500+</div>
+                        <div class="mxp-stat-icon">🏢</div>
+                        <div class="mxp-stat-number blue">500+</div>
                         <div class="mxp-stat-label">Empresas Atendidas</div>
                     </div>
                     <div class="mxp-stat-card">
-                        <div class="mxp-stat-number blue">R$ 2,5M</div>
+                        <div class="mxp-stat-icon">💰</div>
+                        <div class="mxp-stat-number cyan">R$ 2,5M</div>
                         <div class="mxp-stat-label">Em Vendas Geradas</div>
                     </div>
                     <div class="mxp-stat-card">
-                        <div class="mxp-stat-number purple">210%</div>
+                        <div class="mxp-stat-icon">📈</div>
+                        <div class="mxp-stat-number light">210%</div>
                         <div class="mxp-stat-label">Aumento Médio em Vendas</div>
                     </div>
                     <div class="mxp-stat-card">
-                        <div class="mxp-stat-number green">9</div>
+                        <div class="mxp-stat-icon">⭐</div>
+                        <div class="mxp-stat-number gold">9</div>
                         <div class="mxp-stat-label">Anos de Experiência</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section class="mxp-services">
+        <!-- ============================================ -->
+        <!-- SEÇÃO DESTAQUE: AGENTES DE IA PERSONALIZADOS -->
+        <!-- ============================================ -->
+        <section class="mxp-ai-agents" id="agentes-ia">
             <div class="mxp-container">
-                <h2>Soluções de IA para Marketing Digital</h2>
+                <div class="mxp-ai-agents-header">
+                    <div class="mxp-section-label">✦ Serviço em Destaque</div>
+                    <h2>Agentes de IA <span class="mxp-gradient-text">Sob Medida</span> para o Seu Negócio</h2>
+                    <p>
+                        Desenvolvemos agentes inteligentes que entendem o seu mercado, aprendem com os seus dados 
+                        e executam tarefas complexas de forma autônoma, gerando novas oportunidades de receita e eficiência.
+                    </p>
+                </div>
+
+                <div class="mxp-agent-showcase">
+                    <div class="mxp-agent-showcase-content">
+                        <h3>O que um Agente de IA pode fazer pelo seu negócio?</h3>
+                        <p>
+                            Diferente de ferramentas genéricas, nossos agentes são construídos especificamente para a realidade 
+                            da sua empresa. Eles se integram aos seus sistemas, aprendem com seus processos e tomam decisões 
+                            inteligentes que antes exigiam horas de trabalho manual.
+                        </p>
+                        <div class="mxp-agent-features">
+                            <div class="mxp-agent-feature">
+                                <div class="mxp-agent-feature-icon">🎯</div>
+                                <div class="mxp-agent-feature-text">
+                                    <strong>Prospecção Inteligente:</strong> Identifica e qualifica leads automaticamente, 
+                                    priorizando os com maior potencial de conversão.
+                                </div>
+                            </div>
+                            <div class="mxp-agent-feature">
+                                <div class="mxp-agent-feature-icon">💬</div>
+                                <div class="mxp-agent-feature-text">
+                                    <strong>Atendimento 24/7:</strong> Responde clientes no WhatsApp, site e redes sociais 
+                                    com a personalidade e conhecimento da sua marca.
+                                </div>
+                            </div>
+                            <div class="mxp-agent-feature">
+                                <div class="mxp-agent-feature-icon">📊</div>
+                                <div class="mxp-agent-feature-text">
+                                    <strong>Análise de Dados em Tempo Real:</strong> Monitora métricas, identifica padrões 
+                                    e gera relatórios acionáveis automaticamente.
+                                </div>
+                            </div>
+                            <div class="mxp-agent-feature">
+                                <div class="mxp-agent-feature-icon">⚡</div>
+                                <div class="mxp-agent-feature-text">
+                                    <strong>Automação de Processos:</strong> Executa fluxos de trabalho complexos, desde 
+                                    follow-ups até geração de propostas e relatórios.
+                                </div>
+                            </div>
+                            <div class="mxp-agent-feature">
+                                <div class="mxp-agent-feature-icon">🔗</div>
+                                <div class="mxp-agent-feature-text">
+                                    <strong>Integração Total:</strong> Conecta-se ao seu CRM, ERP, WhatsApp, e-mail 
+                                    e demais ferramentas que você já utiliza.
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/19289686271?text=Olá! Quero entender como um agente de IA personalizado pode ajudar meu negócio." class="mxp-btn-primary" target="_blank">Quero meu Agente de IA</a>
+                    </div>
+
+                    <div class="mxp-hero-visual">
+                        <div class="mxp-agent-demo">
+                            <div class="mxp-agent-header">
+                                <div class="mxp-agent-avatar">⚙️</div>
+                                <div class="mxp-agent-info">
+                                    <h4>Agente Personalizado</h4>
+                                    <span><div class="mxp-agent-status-dot"></div> Processando dados</span>
+                                </div>
+                            </div>
+                            <div class="mxp-agent-messages">
+                                <div class="mxp-agent-msg bot">📋 Relatório diário: Analisei 847 interações de clientes nas últimas 24h.</div>
+                                <div class="mxp-agent-msg bot">🔍 Detectei 3 oportunidades de upsell no valor total de R$ 45.000.</div>
+                                <div class="mxp-agent-msg bot">✅ Enviei propostas personalizadas para cada cliente automaticamente.</div>
+                                <div class="mxp-agent-msg bot highlight">💡 Sugestão: Criar campanha segmentada para o perfil "Empresas Tech" - potencial de R$ 120K em receita.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oportunidades que o Agente de IA gera -->
+                <div style="text-align: center !important; margin-bottom: 3rem !important;">
+                    <div class="mxp-section-label">📈 Oportunidades Reais</div>
+                    <h2 style="font-size: 2.5rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 1rem !important;">Oportunidades que um Agente de IA Gera para o Seu Negócio</h2>
+                    <p style="color: rgba(255,255,255,0.8) !important; font-size: 1.1rem !important; max-width: 600px !important; margin: 0 auto !important;">Resultados concretos que nossos clientes alcançam com agentes de IA personalizados</p>
+                </div>
+
+                <div class="mxp-opportunities">
+                    <div class="mxp-opportunity-card">
+                        <div class="mxp-opportunity-icon">🚀</div>
+                        <h4>Aumento de Vendas</h4>
+                        <p>Agentes que prospectam, qualificam e nutrem leads automaticamente, aumentando o pipeline de vendas sem ampliar a equipe.</p>
+                        <div class="mxp-opportunity-stat">+300%</div>
+                        <p style="color: rgba(255,255,255,0.5) !important; font-size: 0.8rem !important;">em leads qualificados</p>
+                    </div>
+                    <div class="mxp-opportunity-card">
+                        <div class="mxp-opportunity-icon">⏱️</div>
+                        <h4>Redução de Custos Operacionais</h4>
+                        <p>Automatize tarefas repetitivas e libere sua equipe para atividades estratégicas que realmente geram valor.</p>
+                        <div class="mxp-opportunity-stat">-70%</div>
+                        <p style="color: rgba(255,255,255,0.5) !important; font-size: 0.8rem !important;">em custos operacionais</p>
+                    </div>
+                    <div class="mxp-opportunity-card">
+                        <div class="mxp-opportunity-icon">🎯</div>
+                        <h4>Atendimento Escalável</h4>
+                        <p>Atenda centenas de clientes simultaneamente com qualidade e personalização, sem filas de espera.</p>
+                        <div class="mxp-opportunity-stat">24/7</div>
+                        <p style="color: rgba(255,255,255,0.5) !important; font-size: 0.8rem !important;">disponibilidade total</p>
+                    </div>
+                    <div class="mxp-opportunity-card">
+                        <div class="mxp-opportunity-icon">📊</div>
+                        <h4>Decisões Baseadas em Dados</h4>
+                        <p>Insights em tempo real sobre o comportamento dos seus clientes e tendências do mercado para decisões mais assertivas.</p>
+                        <div class="mxp-opportunity-stat">95%</div>
+                        <p style="color: rgba(255,255,255,0.5) !important; font-size: 0.8rem !important;">de precisão preditiva</p>
+                    </div>
+                    <div class="mxp-opportunity-card">
+                        <div class="mxp-opportunity-icon">🔄</div>
+                        <h4>Novos Canais de Receita</h4>
+                        <p>Descubra oportunidades de upsell e cross-sell que passariam despercebidas, maximizando o valor de cada cliente.</p>
+                        <div class="mxp-opportunity-stat">+45%</div>
+                        <p style="color: rgba(255,255,255,0.5) !important; font-size: 0.8rem !important;">em receita por cliente</p>
+                    </div>
+                    <div class="mxp-opportunity-card">
+                        <div class="mxp-opportunity-icon">⚡</div>
+                        <h4>Velocidade Competitiva</h4>
+                        <p>Responda ao mercado em minutos, não em dias. Seus agentes de IA identificam e agem sobre oportunidades antes da concorrência.</p>
+                        <div class="mxp-opportunity-stat">10x</div>
+                        <p style="color: rgba(255,255,255,0.5) !important; font-size: 0.8rem !important;">mais rápido que processos manuais</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="mxp-services" id="solucoes">
+            <div class="mxp-container">
+                <h2>Nossas Soluções de IA para Marketing</h2>
                 <p class="mxp-services-subtitle">
-                    Tecnologias de inteligência artificial que automatizam, otimizam e potencializam seus resultados de marketing
+                    Além dos agentes personalizados, oferecemos um ecossistema completo de soluções de inteligência artificial para potencializar seus resultados
                 </p>
                 
                 <div class="mxp-services-grid">
                     <div class="mxp-service-card">
-                        <div class="mxp-service-number pink">01</div>
+                        <div class="mxp-service-number blue">01</div>
                         <h3 class="mxp-service-title">Automação Inteligente com IA</h3>
                         <p class="mxp-service-description">
                             Chatbots avançados, automação de email marketing e nutrição de leads com inteligência artificial que converte 24/7.
@@ -760,7 +1406,7 @@
                     </div>
 
                     <div class="mxp-service-card">
-                        <div class="mxp-service-number blue">02</div>
+                        <div class="mxp-service-number cyan">02</div>
                         <h3 class="mxp-service-title">Análise Preditiva e Big Data</h3>
                         <p class="mxp-service-description">
                             IA que analisa comportamentos, prevê tendências e identifica oportunidades antes da concorrência.
@@ -770,7 +1416,7 @@
                     </div>
 
                     <div class="mxp-service-card">
-                        <div class="mxp-service-number purple">03</div>
+                        <div class="mxp-service-number light">03</div>
                         <h3 class="mxp-service-title">Campanhas Otimizadas por IA</h3>
                         <p class="mxp-service-description">
                             Algoritmos de machine learning que otimizam anúncios em tempo real, maximizando conversões e ROI.
@@ -780,7 +1426,7 @@
                     </div>
 
                     <div class="mxp-service-card">
-                        <div class="mxp-service-number green">04</div>
+                        <div class="mxp-service-number gold">04</div>
                         <h3 class="mxp-service-title">Personalização Inteligente</h3>
                         <p class="mxp-service-description">
                             IA que cria experiências únicas para cada cliente, personalizando conteúdo, ofertas e jornadas em tempo real.
@@ -796,72 +1442,36 @@
     <!-- CTA Section -->
     <section class="mxp-cta">
         <div class="mxp-container">
-            <h2>Pronto para o Futuro do Marketing com IA?</h2>
+            <h2>Pronto para ter seu próprio Agente de IA?</h2>
             <p>
-                Não fique para trás enquanto seus concorrentes usam IA. Transforme seu negócio hoje 
-                com tecnologias que já estão revolucionando o mercado.
+                Empresas que adotam agentes de IA personalizados estão saindo na frente. 
+                Descubra como automatizar processos, gerar mais vendas e escalar seu negócio 
+                com inteligência artificial feita sob medida.
             </p>
             <div class="mxp-cta-highlight">
-                🤖 Consultoria gratuita sobre IA no marketing
+                🤖 Consultoria gratuita + demonstração do seu agente de IA
             </div>
-            <a href="https://wa.me/19289686271?text=Quero uma consultoria gratuita sobre IA no marketing digital!" class="mxp-btn-white" target="_blank">🚀 Descobrir Soluções de IA</a>
+            <a href="https://wa.me/19289686271?text=Quero uma consultoria gratuita sobre agentes de IA personalizados para meu negócio!" class="mxp-btn-white" target="_blank">Agendar Consultoria Gratuita</a>
         </div>
     </section>
 
-    <!-- Chat Widget -->
-    <div class="mxp-chat-widget">
-        💬
-    </div>
-</div>
-
-<script>
-// Scroll reveal animation
-function reveal() {
-    const reveals = document.querySelectorAll('.reveal');
-    
-    for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add('active');
-        }
-    }
-}
-
-window.addEventListener('scroll', reveal);
-
-// Parallax effect
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallax = document.querySelector('.mxp-bg-gradient');
-    const speed = scrolled * 0.5;
-    
-    if (parallax) {
-        parallax.style.transform = `translateY(${speed}px)`;
-    }
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
-</script    </div>
+    <!-- Footer -->
+    <footer class="mxp-footer">
+        <div class="mxp-container">
+            <div class="mxp-footer-content">
+                <div class="mxp-footer-text">© 2025 MXP Digital. Todos os direitos reservados.</div>
+                <div class="mxp-footer-links">
+                    <a href="#agentes-ia">Agentes de IA</a>
+                    <a href="#solucoes">Soluções</a>
+                    <a href="#resultados">Resultados</a>
+                    <a href="https://wa.me/19289686271?text=Olá! Vim pelo site e gostaria de saber mais." target="_blank">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Chat Widget Funcional -->
-    <a href="https://wa.me/19289686271?text=Olá! Vim pelo site e gostaria de saber mais sobre os serviços de IA." target="_blank" class="mxp-chat-widget">
+    <a href="https://wa.me/19289686271?text=Olá! Vim pelo site e gostaria de saber mais sobre os agentes de IA personalizados." target="_blank" class="mxp-chat-widget">
         <div class="mxp-chat-icon">💬</div>
         <div class="mxp-chat-tooltip">Fale conosco!</div>
     </a>
@@ -914,6 +1524,74 @@ window.addEventListener('load', () => {
             transform: translateX(0) !important;
         }
     </style>
+</div>
+
+<script>
+// Scroll reveal animation
+function reveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('active');
+        }
+    }
+}
+
+window.addEventListener('scroll', reveal);
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Add loading animation
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
+// Animate stats on scroll
+function animateStats() {
+    const stats = document.querySelectorAll('.mxp-stat-number');
+    
+    stats.forEach(stat => {
+        const windowHeight = window.innerHeight;
+        const elementTop = stat.getBoundingClientRect().top;
+        
+        if (elementTop < windowHeight - 100 && !stat.classList.contains('animated')) {
+            stat.classList.add('animated');
+            stat.style.animation = 'fadeInUp 0.6s ease-out forwards';
+        }
+    });
+}
+
+window.addEventListener('scroll', animateStats);
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.mxp-header');
+    if (window.scrollY > 50) {
+        header.style.background = 'rgba(15, 23, 42, 0.95)';
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    } else {
+        header.style.background = 'rgba(15, 23, 42, 0.8)';
+        header.style.boxShadow = 'none';
+    }
+});
+</script>
 
 </body>
 </html>
