@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Consent Mode. Espelha para o Google a mesma preferencia usada pelo pixel da OpenAI
+     ("Preferencias de medicao", rodape). Opt-out sob legitimo interesse: mede salvo recusa
+     explicita. Precisa vir ANTES do Tag Manager para valer no primeiro carregamento. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+(function () {
+    var granted = true;
+    try { granted = localStorage.getItem("mxp_oai_measurement_consent") !== "denied"; } catch (e) {}
+    var v = granted ? "granted" : "denied";
+    gtag("consent", "default", {
+        "ad_storage": v,
+        "ad_user_data": v,
+        "ad_personalization": v,
+        "analytics_storage": v,
+        "functionality_storage": "granted",
+        "security_storage": "granted"
+    });
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FK076TGFQP"></script>
+<script>
+gtag('js', new Date());
+gtag('config', 'G-FK076TGFQP');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TSK988KP');</script>
+<!-- End Google Tag Manager -->
+    <!-- OpenAI Ads Measurement Pixel. Medição ativa por padrão sob legítimo interesse (LGPD art. 7º, IX), com opt-out permanente em "Preferências de medição". -->
+    <script>
+        (function (w, d, s, u) {
+            if (w.oaiq) return;
+            var q = function () { q.q.push(arguments); };
+            q.q = [];
+            w.oaiq = q;
+            var js = d.createElement(s);
+            js.async = true;
+            js.src = u;
+            var f = d.getElementsByTagName(s)[0];
+            f.parentNode.insertBefore(js, f);
+        })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+
+        (function (w) {
+            var storageKey = "mxp_oai_measurement_consent";
+            var storedConsent = null;
+            try { storedConsent = localStorage.getItem(storageKey); } catch (e) {}
+            if (storedConsent !== "granted" && storedConsent !== "denied") storedConsent = null;
+
+            oaiq("consent", storedConsent !== "denied"); // opt-out: mede salvo recusa explícita
+            oaiq("init", { pixelId: "G1CtbTEhKgBgLdHFX1K7SY" });
+
+            w.mxpMeasurementConsent = {
+                get: function () { return storedConsent; },
+                enabled: function () { return storedConsent !== "denied"; },
+                set: function (granted) {
+                    storedConsent = granted ? "granted" : "denied";
+                    try { localStorage.setItem(storageKey, storedConsent); } catch (e) {}
+                    oaiq("consent", granted);
+                    if (typeof gtag === "function") {
+                        var g = granted ? "granted" : "denied";
+                        gtag("consent", "update", {
+                            "ad_storage": g, "ad_user_data": g,
+                            "ad_personalization": g, "analytics_storage": g
+                        });
+                    }
+                    return storedConsent;
+                }
+            };
+        })(window);
+    </script>
+<title>MXP Digital | Agentes, automação e sistemas de IA para empresas</title>
+<meta name="description" content="Sua empresa pode operar melhor com IA. A MXP implementa agentes, automações e sistemas integrados ao atendimento, CRM, aquisição e processos internos.">
+<meta name="theme-color" content="#070e1b">
+<link rel="canonical" href="https://mxpmkt.com.br/">
+<link rel="icon" type="image/jpeg" href="assets/mxp-logo.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://mxpmkt.com.br/">
+<meta property="og:title" content="MXP Digital | Inteligência artificial que entra na operação">
+<meta property="og:description" content="Agentes, automações e sistemas de IA conectados a processos, dados e ferramentas reais.">
+<meta property="og:image" content="https://mxpmkt.com.br/assets/mxp-logo.jpg">
+<meta name="twitter:card" content="summary">
+<style>
+:root{
+  --bg:#0b0d10;--bg-2:#101318;--card:#14181f;--card-2:#181d25;
+  --line:#272d36;--line-2:#353d48;--text:#f4f6f8;--muted:#a7b0bc;
+  --muted-2:#7c8795;--accent:#81e6d9;--accent-2:#72a7ff;--ok:#8ee3ad;
+  --max:1160px;--radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+button,input,textarea{font:inherit}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.header{position:sticky;top:0;z-index:50;background:rgba(11,13,16,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:-.02em}
+.brand img{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2)}
+.brand b{font-size:18px}
+.brand b span{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:600}
+.nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:999px;border:1px solid var(--line-2);padding:12px 18px;font-size:14px;font-weight:750;transition:.2s ease}
+.btn:hover{transform:translateY(-1px);border-color:#596575}
+.btn-primary{background:var(--text);color:#0b0d10;border-color:var(--text)}
+.btn-primary:hover{background:#dfe4e8;border-color:#dfe4e8}
+.btn-quiet{background:transparent}
+.hero{padding:96px 0 74px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--accent);margin-bottom:18px}
+h1,h2,h3{letter-spacing:-.04em;line-height:1.05;margin:0}
+h1{font-size:clamp(44px,6vw,74px);max-width:760px}
+.hero-copy{font-size:19px;color:var(--muted);max-width:690px;margin:26px 0 0;line-height:1.7}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.proof-line{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:30px;color:var(--muted-2);font-size:13px}
+.proof-line span{display:flex;gap:8px;align-items:center}
+.proof-line i{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block}
+.system-card{border:1px solid var(--line-2);border-radius:28px;background:linear-gradient(180deg,var(--card),#10141a);padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.28)}
+.system-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);font-weight:800;margin-bottom:14px}
+.flow{display:grid;gap:10px}
+.flow-node{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.018)}
+.flow-node strong{font-size:14px}
+.flow-node small{display:block;color:var(--muted-2);font-size:12px;margin-top:2px}
+.flow-num{width:34px;height:34px;border-radius:10px;background:#202630;display:grid;place-items:center;color:var(--accent);font-size:12px;font-weight:800}
+.flow-tag{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);font-weight:800}
+.flow-arrow{height:12px;margin-left:30px;border-left:1px solid var(--line-2)}
+.section{padding:88px 0;border-bottom:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:end;margin-bottom:48px}
+.section-head h2{font-size:clamp(34px,4vw,52px)}
+.section-head p{margin:0;color:var(--muted);font-size:17px;line-height:1.75;max-width:700px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;min-height:265px;display:flex;flex-direction:column}
+.card .num{font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:800;margin-bottom:28px}
+.card h3{font-size:21px;line-height:1.15;margin-bottom:14px}
+.card p{color:var(--muted);font-size:14px;line-height:1.7;margin:0 0 20px}
+.card ul{padding:0;margin:auto 0 0;list-style:none;display:grid;gap:8px}
+.card li{color:var(--muted-2);font-size:12.5px;border-top:1px solid var(--line);padding-top:8px}
+.band{background:#0e1115}
+.band-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:66px;align-items:center}
+.band h2{font-size:clamp(38px,5vw,60px);max-width:720px}
+.band p{color:var(--muted);font-size:17px;line-height:1.78}
+.quote{margin-top:28px;border-left:2px solid var(--accent);padding:2px 0 2px 18px;color:#dce3e9;font-size:17px;line-height:1.7}
+.evidence{display:grid;gap:12px}
+.evidence-item{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:22px}
+.evidence-item b{display:block;font-size:16px;margin-bottom:5px}
+.evidence-item span{color:var(--muted);font-size:13.5px;line-height:1.65}
+.method{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.method-step{padding:28px;background:var(--card);border-right:1px solid var(--line);min-height:220px}
+.method-step:last-child{border-right:0}
+.method-step .step{font-size:11px;color:var(--accent);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.method-step h3{font-size:20px;margin:36px 0 12px}
+.method-step p{font-size:13.5px;color:var(--muted);line-height:1.68;margin:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feature{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:30px}
+.feature-label{color:var(--accent);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+.feature h3{font-size:28px;margin:18px 0 14px}
+.feature p{color:var(--muted);font-size:15px;line-height:1.75;margin:0 0 24px}
+.feature-link{font-weight:750;text-decoration:none;font-size:14px}
+.feature-link:hover{text-decoration:underline}
+.case{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+.case-main,.case-side{border:1px solid var(--line);border-radius:var(--radius);padding:32px;background:var(--card)}
+.case-main h3{font-size:32px;margin:8px 0 18px}
+.case-main p,.case-side p{color:var(--muted);line-height:1.75}
+.case-side{display:flex;flex-direction:column;justify-content:space-between}
+.case-side strong{font-size:20px;line-height:1.25}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+details{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:18px 20px}
+summary{cursor:pointer;font-weight:750}
+details p{color:var(--muted);font-size:14px;line-height:1.7;margin:14px 0 2px}
+.cta{padding:96px 0}
+.cta-box{border:1px solid var(--line-2);border-radius:30px;background:var(--card);padding:52px;display:grid;grid-template-columns:1fr auto;gap:42px;align-items:center}
+.cta-box h2{font-size:clamp(34px,4vw,50px);max-width:760px}
+.cta-box p{color:var(--muted);margin:15px 0 0;max-width:700px}
+.footer{border-top:1px solid var(--line);padding:32px 0 44px}
+.footer-inner{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+.footer small{color:var(--muted-2);max-width:650px;line-height:1.65}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.footer-links a{font-size:12px;color:var(--muted);text-decoration:none}
+.footer-links a:hover{color:var(--text)}
+.consent-settings{font:inherit;font-size:12px;color:var(--muted);background:none;border:0;padding:0;cursor:pointer;text-decoration:none}
+.consent-settings:hover{color:var(--text)}
+.measurement-consent{position:fixed;left:20px;right:20px;bottom:20px;z-index:100;background:#151a21;border:1px solid var(--line-2);border-radius:16px;padding:16px 18px;box-shadow:0 18px 60px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.measurement-consent[hidden]{display:none}
+.measurement-consent p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.55;max-width:900px}
+.measurement-consent strong{color:var(--text)}
+.measurement-consent-actions{display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0}
+.measurement-consent button{border:1px solid var(--line-2);background:#20262f;color:var(--text);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700;cursor:pointer}
+.measurement-consent .consent-accept{background:var(--text);color:#0b0d10;border-color:var(--text)}
+@media(max-width:700px){.measurement-consent{align-items:flex-start;flex-direction:column}.measurement-consent-actions{width:100%}.measurement-consent button{flex:1}}
+@media(max-width:980px){
+ .nav a:not(.btn){display:none}
+ .hero-grid,.section-head,.band-grid,.case,.cta-box{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr 1fr}
+ .method{grid-template-columns:1fr 1fr}
+ .method-step:nth-child(2){border-right:0}
+ .method-step:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media(max-width:640px){
+ .wrap{width:min(100% - 28px,var(--max))}
+ .header-inner{height:68px}
+ .brand b{font-size:16px}
+ .nav{gap:10px}
+ .nav .btn{padding:10px 13px;font-size:12px}
+ .hero{padding:68px 0 54px}
+ h1{font-size:43px}
+ .hero-copy{font-size:17px}
+ .section{padding:64px 0}
+ .section-head{gap:18px;margin-bottom:32px}
+ .cards,.split,.faq{grid-template-columns:1fr}
+ .card{min-height:0}
+ .method{grid-template-columns:1fr}
+ .method-step{border-right:0;border-bottom:1px solid var(--line)}
+ .method-step:last-child{border-bottom:0}
+ .cta-box{padding:30px}
+ .footer-inner{flex-direction:column}
+ .footer-links{justify-content:flex-start}
+ .system-card{padding:16px}
+ .flow-node{grid-template-columns:34px 1fr}
+ .flow-tag{display:none}
+}
+
+/* MXP 2026 Design System — premium technology / conversion */
+:root{
+ --bg:#070e1b;--bg-2:#0c172b;--card:#101c30;--card-2:#182840;
+ --line:#263650;--line-2:#3b5271;--text:#f7f9ff;--muted:#b3c2d6;
+ --muted-2:#97a9c2;--accent:#56dbd0;--accent-2:#80abff;
+ --max:1200px;--radius:20px
+}
+html{scroll-padding-top:88px}
+body{background:#070e1b;background-image:radial-gradient(ellipse 90% 700px at 92% 0%,rgba(36,82,165,.24),transparent 68%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+::selection{color:#061323;background:#6be4d8}
+a,button,select,textarea{outline-offset:4px}
+:focus-visible{outline:3px solid #79e3da!important;outline-offset:4px}
+.skip-link{position:absolute;left:16px;top:-80px;z-index:120;background:#fff;color:#101827;padding:12px 18px;border-radius:8px}
+.skip-link:focus{top:12px}
+.header{background:rgba(6,13,26,.83);border-color:rgba(154,187,243,.13)}
+.header-inner{height:79px}
+.brand img{border-radius:12px;border-color:rgba(154,187,243,.25)}
+.brand b{font-size:20px;letter-spacing:-.045em}
+.nav a:not(.btn){font-size:13px;transition:color .2s}
+.nav .btn{padding:11px 16px}
+.btn{border-radius:11px;min-height:44px}
+.btn-primary{color:#07101e;background:#80abff;border-color:#80abff;box-shadow:0 8px 28px rgba(75,126,251,.16)}
+.btn-primary:hover{background:#a9c6ff;border-color:#a9c6ff;box-shadow:0 12px 34px rgba(75,126,251,.28)}
+.btn-quiet{color:#dbe6fb;border-color:#40516c}
+.btn-quiet:hover{background:rgba(255,255,255,.05)}
+.hero{position:relative;overflow:hidden;padding:100px 0 85px;border-color:rgba(154,187,243,.12)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.25;background-image:linear-gradient(rgba(165,197,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(165,197,255,.06) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,#000,transparent 88%)}
+.hero::after{content:"";position:absolute;z-index:-1;width:520px;height:520px;right:-240px;top:20px;border-radius:50%;background:#2053a4;filter:blur(170px);opacity:.2;pointer-events:none}
+.hero-grid{position:relative;z-index:1;grid-template-columns:1.05fr .95fr;gap:54px}
+.hero h1{font-size:clamp(45px,5.25vw,72px);line-height:1.06;max-width:760px;letter-spacing:-.058em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:#86b3ff}
+.hero-copy{font-size:18px;line-height:1.72;max-width:610px;color:#c0cfe2}
+.hero-actions{margin-top:32px}
+.hero-actions .btn{padding:14px 22px;min-height:50px}
+.hero .kicker{display:inline-flex;gap:10px;align-items:center;border:1px solid #365476;border-radius:999px;padding:8px 13px;background:rgba(74,122,188,.10);letter-spacing:.12em;font-size:10px}
+.hero .kicker:before{content:"";height:7px;width:7px;border-radius:50%;background:#56dbd0;box-shadow:0 0 0 4px rgba(86,219,208,.11)}
+.proof-line{margin-top:32px;gap:12px 20px;color:#a9b9d0;font-size:12px}
+.proof-line span{align-items:center}
+.proof-line i{background:#76ddc9}
+.system-card{padding:0;border:1px solid #36506f;border-radius:22px;background:linear-gradient(157deg,rgba(20,36,60,.97),rgba(9,18,33,.98));box-shadow:0 45px 95px rgba(0,0,0,.35),0 0 80px rgba(62,100,184,.08);overflow:hidden}
+.demo-top{padding:21px 22px 19px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #263851}
+.demo-title{display:flex;align-items:center;gap:11px}
+.demo-logo{display:grid;place-items:center;background:#294b80;color:#b9d4ff;font-size:18px;font-weight:900;border-radius:11px;width:38px;height:38px}
+.demo-title b{font-size:13px;display:block;line-height:1.35}
+.demo-title small{font-size:11px;color:#92a4bb;display:block}
+.demo-state{display:inline-flex;align-items:center;gap:7px;color:#bcece5;border:1px solid #2c655f;padding:6px 8px;border-radius:999px;font-size:10px;white-space:nowrap}
+.demo-state:before{content:"";width:6px;height:6px;border-radius:50%;background:#56dbd0}
+.demo-body{padding:24px 22px}
+.demo-overline{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#8fa5c5;margin:0 0 16px}
+.demo-stages{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.demo-step{appearance:none;border:1px solid #31435e;background:#12243b;color:#b8c8dd;padding:14px 7px 12px;min-height:88px;text-align:center;border-radius:11px;cursor:pointer;transition:background .2s,border .2s,transform .2s}
+.demo-step:hover{background:#1b3552;transform:translateY(-1px)}
+.demo-step[aria-pressed="true"]{border-color:#7da8ff;background:#1b3555;color:#fff;box-shadow:inset 0 0 0 1px #7da8ff}
+.demo-step small{display:block;font-size:9px;color:#91a7c2;letter-spacing:.08em;margin-bottom:8px}
+.demo-step strong{font-size:11px;font-weight:750;line-height:1.2;display:block}
+.demo-result{border:1px solid #33516b;background:#0c1a2b;padding:20px;border-radius:14px;min-height:158px}
+.demo-result-head{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#8fa5c5;font-weight:750}
+.demo-indicator{color:#6de0ca}
+.demo-result h3{font-size:19px;letter-spacing:-.025em;line-height:1.2;margin:15px 0 10px}
+.demo-result p{color:#aebed2;font-size:13px;line-height:1.65;margin:0}
+.demo-foot{padding:13px 22px;background:#0b1627;border-top:1px solid #263851;display:flex;justify-content:space-between;gap:14px;color:#849ab6;font-size:10px}
+.demo-foot b{color:#b8cde9}
+.section{border-color:#1c2c43}
+.section-head{gap:55px}
+.section-head h2,.band h2,.cta-box h2{letter-spacing:-.052em;text-wrap:balance}
+.card,.feature,.case-main,.case-side,.evidence-item,details{background:linear-gradient(165deg,rgba(22,36,57,.95),rgba(12,23,40,.95));border-color:#263650}
+.card,.feature,.case-main,.case-side{transition:border .2s,transform .2s}
+.card:hover,.feature:hover,.case-main:hover{border-color:#466a9d;transform:translateY(-2px)}
+.card .num,.feature-label,.method-step .step{color:#76ddd1}
+.card li{color:#b4c3d8}
+.band{background:linear-gradient(145deg,#0a1527,#101c30)}
+.case{grid-template-columns:1.24fr .76fr}
+.case-main{position:relative;overflow:hidden}
+.case-main::after{content:"";position:absolute;right:-60px;top:-85px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(63,112,205,.2),transparent 70%);pointer-events:none}
+.case-tag{display:inline-block;border:1px solid #3a597a;color:#abd4e6;border-radius:999px;padding:5px 10px;font-size:10px;margin-top:18px;letter-spacing:.05em}
+.case-side{border-left:2px solid #56dbd0}
+.case-side .case-flow{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.case-flow span{border:1px solid #36516d;border-radius:7px;padding:7px 8px;font-size:11px;color:#aec3de}
+.method-step{background:#101b2d}
+.method-step h3{margin-top:30px}
+.diagnosis{padding:86px 0;border-bottom:1px solid #243550}
+.diagnosis-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:center}
+.diagnosis h2{font-size:clamp(34px,4.4vw,56px);letter-spacing:-.05em;line-height:1.08;margin:0 0 20px}
+.diagnosis p{color:#b7c5da;font-size:16px;line-height:1.8}
+.diagnosis-points{display:grid;gap:12px;margin-top:28px}
+.diagnosis-points div{color:#c1d3e7;font-size:13px;display:flex;align-items:center;gap:11px}
+.diagnosis-points div:before{content:"✓";width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:#173d48;color:#7de1d6}
+.diagnosis-form{padding:30px;background:linear-gradient(160deg,#182a43,#101d32);border:1px solid #38516d;border-radius:22px;display:grid;gap:16px}
+.diagnosis-form label{display:grid;gap:7px;font-size:12px;letter-spacing:.01em;font-weight:750;color:#cedcf0}
+.diagnosis-form select,.diagnosis-form textarea{width:100%;min-width:0;border:1px solid #405672;border-radius:10px;background:#0c182b;color:#f7f9ff;padding:13px 14px;font-size:14px;line-height:1.55}
+.diagnosis-form select{min-height:47px}
+.diagnosis-form textarea{min-height:112px;resize:vertical}
+.diagnosis-form .btn{cursor:pointer;width:100%;font-weight:750}
+.diagnosis-form .note{font-size:11px;line-height:1.55;color:#9caec7;margin:0}
+.diagnosis-form .note a{color:#b8d3ff}
+.cta-box{background:linear-gradient(120deg,#152743,#0d1a2d);border-color:#3f5879}
+@media(max-width:980px){.hero-grid,.diagnosis-grid{grid-template-columns:1fr;gap:46px}.hero-grid{max-width:730px}.system-card{max-width:650px}.diagnosis-form{max-width:650px}}
+@media(max-width:640px){
+ html{scroll-padding-top:72px}
+ .hero{padding:60px 0 60px}
+ .hero h1{font-size:clamp(39px,10vw,52px)}
+ .hero-copy{font-size:16px}
+ .hero-actions{display:grid;grid-template-columns:1fr}
+ .hero-actions .btn{width:100%}
+ .proof-line{display:grid;gap:10px}
+ .demo-body{padding:18px 14px}
+ .demo-top{padding:15px}
+ .demo-foot{padding:12px 15px}
+ .demo-stages{gap:5px}
+ .demo-step{padding:10px 4px;min-height:74px}
+ .demo-step small{font-size:8px}
+ .demo-step strong{font-size:9px}
+ .diagnosis{padding:62px 0}
+ .diagnosis-grid{gap:28px}
+ .diagnosis-form{padding:20px}
+ .case-main,.case-side{padding:25px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important;transform:none!important}
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"MXP Digital",
+  "url":"https://mxpmkt.com.br/",
+  "description":"Empresa brasileira de IA aplicada a operações empresariais, com agentes, automações, integrações e sistemas sob medida."
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSK988KP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <img src="assets/mxp-logo.jpg" width="42" height="42" alt="MXP Digital">
+      <b>MXP<span>.</span>Digital</b>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#capacidades">Soluções</a>
+      <a href="#prova">Cases</a>
+      <a href="#cliente-zero">Tecnologia</a>
+      <a href="#como-atuamos">Como funciona</a>
+      <a class="btn btn-primary" href="#diagnostico">Avaliar meu processo ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+<section class="hero" aria-labelledby="home-title">
+  <div class="wrap hero-grid">
+    <div class="hero-content">
+      <div class="kicker">Sistemas, agentes e automação com IA</div>
+      <h1 id="home-title">Sua empresa pode <em>operar melhor</em> com inteligência artificial.</h1>
+      <p class="hero-copy">A MXP constrói agentes, automações e sistemas conectados às ferramentas que você já utiliza. Da aquisição de clientes à execução de processos — com inteligência e supervisão.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#diagnostico">Descobrir oportunidades na minha empresa ↗</a>
+        <a class="btn btn-quiet" href="#demo">Ver a tecnologia em ação ↓</a>
+      </div>
+      <div class="proof-line" aria-label="Princípios da MXP">
+        <span><i aria-hidden="true"></i> Tecnologia testada na operação da MXP</span>
+        <span><i aria-hidden="true"></i> Integrações com sistemas reais</span>
+        <span><i aria-hidden="true"></i> Supervisão humana quando necessária</span>
+      </div>
+    </div>
+    <aside class="system-card" id="demo" aria-label="Demonstração ilustrativa de uma operação comercial automatizada">
+      <div class="demo-top">
+        <div class="demo-title"><div class="demo-logo" aria-hidden="true">M</div><div><b>MXP / Fluxo operacional</b><small>Um exemplo de automação comercial</small></div></div>
+        <span class="demo-state">Simulação</span>
+      </div>
+      <div class="demo-body">
+        <p class="demo-overline">Explore cada etapa do processo</p>
+        <div class="demo-stages" role="group" aria-label="Selecionar etapa do fluxo">
+          <button type="button" class="demo-step" data-demo-step="0" aria-pressed="true"><small>01 / ENTRADA</small><strong>Contato</strong></button>
+          <button type="button" class="demo-step" data-demo-step="1" aria-pressed="false"><small>02 / IA</small><strong>Qualificação</strong></button>
+          <button type="button" class="demo-step" data-demo-step="2" aria-pressed="false"><small>03 / SISTEMA</small><strong>CRM</strong></button>
+          <button type="button" class="demo-step" data-demo-step="3" aria-pressed="false"><small>04 / HUMANO</small><strong>Equipe</strong></button>
+        </div>
+        <div class="demo-result" aria-live="polite" aria-atomic="true">
+          <div class="demo-result-head"><span data-demo-number>ETAPA 01 / 04</span><span class="demo-indicator">● FLUXO EXEMPLO</span></div>
+          <h3 data-demo-title>Uma oportunidade chega pelo WhatsApp.</h3>
+          <p data-demo-description>O sistema identifica a origem do contato e reúne o contexto disponível para iniciar o atendimento.</p>
+        </div>
+      </div>
+      <div class="demo-foot"><span>Sem dados de clientes</span><span><b>Explore os botões acima</b> · fluxo ilustrativo</span></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="prova">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">Em produção</div><h2>Prova concreta antes de promessa grande.</h2></div>
+      <p>Preferimos mostrar um sistema operando de verdade a preencher a página com métricas sem lastro. O case público da RE/MAX Real mostra uma aplicação específica: atendimento, qualificação e integração comercial via WhatsApp.</p>
+    </div>
+    <div class="case">
+      <article class="case-main">
+        <div class="feature-label">Case público · operação imobiliária</div>
+        <h3>RE/MAX Real</h3>
+        <p>A Ana atende contatos no WhatsApp, entende a intenção, qualifica o lead e encaminha o contexto para a operação comercial. O case documenta o que está em produção e, igualmente importante, o que ele ainda não prova.</p>
+        <span class="case-tag">WhatsApp + qualificação + integração comercial</span>
+        <div style="margin-top:18px"></div><a class="feature-link" href="/agente-ia/case-remax-real/">Explorar o projeto →</a>
+      </article>
+      <aside class="case-side">
+        <strong>Sem estatística decorativa.</strong>
+        <p>Ana é uma aplicação documentada de atendimento e qualificação. O case apresenta o que está implantado, sem estimativas de ganhos não comprovados.</p><div class="case-flow" aria-label="Etapas típicas"><span>Recepção</span><span>Qualificação</span><span>Encaminhamento</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="capacidades">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">Capacidades</div><h2>Começamos pelo problema. A tecnologia vem depois.</h2></div>
+      <p>Nem toda empresa precisa de um “agente”. Às vezes o ganho está em conectar sistemas, eliminar uma etapa manual, responder mais rápido, instrumentar o funil ou criar uma aplicação específica. A MXP escolhe o mecanismo pelo resultado esperado.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="num">01 — AQUISIÇÃO</div>
+        <h3>Aquisição com IA</h3>
+        <p>Planejamento, mídia, páginas e mensuração conectados ao que acontece depois do clique.</p>
+        <ul><li>ChatGPT Ads e novas superfícies</li><li>Meta, Google, SEO e landing pages</li><li>Mensuração e qualificação do tráfego</li></ul>
+      </article>
+      <article class="card">
+        <div class="num">02 — COMERCIAL</div>
+        <h3>Operação comercial</h3>
+        <p>IA aplicada à chegada, entendimento, qualificação, acompanhamento e encaminhamento de oportunidades.</p>
+        <ul><li>Atendimento e qualificação</li><li>CRM, follow-up e agendamento</li><li>Handoff para o time humano</li></ul>
+      </article>
+      <article class="card">
+        <div class="num">03 — AUTOMAÇÃO</div>
+        <h3>Agentes e workflows</h3>
+        <p>Agentes especializados que trabalham com contexto, ferramentas e regras de operação — não respostas prontas.</p>
+        <ul><li>Workflows de múltiplas etapas</li><li>APIs, webhooks e sistemas internos</li><li>Supervisão e trilhas de decisão</li></ul>
+      </article>
+      <article class="card">
+        <div class="num">04 — SISTEMAS</div>
+        <h3>IA sob medida</h3>
+        <p>Quando o problema não cabe em uma ferramenta pronta, construímos a camada necessária para resolver o processo.</p>
+        <ul><li>Aplicações e dashboards</li><li>Integrações e ferramentas internas</li><li>Soluções específicas por operação</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section band" id="cliente-zero">
+  <div class="wrap band-grid">
+    <div>
+      <div class="kicker">Cliente zero</div>
+      <h2>Antes de vender automação, a MXP coloca a própria operação à prova.</h2>
+      <p>A MXP usa internamente agentes, automações e sistemas para executar partes reais do trabalho. Isso muda a conversa: problemas de integração, confiabilidade, recuperação, custo e supervisão aparecem primeiro na nossa operação — não depois de chegar ao cliente.</p>
+      <div class="quote">“Usar o que construímos” não é slogan. É o filtro para separar demonstração de sistema que precisa sobreviver em produção.</div>
+    </div>
+    <div class="evidence">
+      <div class="evidence-item"><b>Operação real, não laboratório isolado</b><span>As soluções são avaliadas em fluxos que têm consequência operacional e precisam lidar com contexto, estado e falha.</span></div>
+      <div class="evidence-item"><b>Autonomia com fronteiras</b><span>Automatizamos onde há regra e evidência; mantemos aprovação humana onde existe decisão material, risco ou responsabilidade.</span></div>
+      <div class="evidence-item"><b>Aprendizado que volta para o produto</b><span>O que quebra, consome demais ou depende de intervenção frequente vira sinal para melhorar arquitetura, processo e oferta.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="como-atuamos">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">Como atuamos</div><h2>Da operação atual para uma camada de IA que realmente funciona.</h2></div>
+      <p>Não começamos vendendo uma ferramenta. Começamos entendendo onde o processo perde tempo, dinheiro, contexto ou oportunidade — e qual nível de autonomia faz sentido.</p>
+    </div>
+    <div class="method">
+      <div class="method-step"><div class="step">01 / Mapear</div><h3>Entender o trabalho real</h3><p>Jornada, sistemas, dados, exceções, gargalos e decisões que hoje dependem de pessoas ou tarefas manuais.</p></div>
+      <div class="method-step"><div class="step">02 / Desenhar</div><h3>Definir a fronteira</h3><p>O que a IA pode executar, o que precisa consultar, quando deve parar e quando um humano assume.</p></div>
+      <div class="method-step"><div class="step">03 / Integrar</div><h3>Conectar à operação</h3><p>APIs, CRM, mensageria, dados, agenda, catálogo ou sistemas específicos entram no fluxo certo.</p></div>
+      <div class="method-step"><div class="step">04 / Operar</div><h3>Medir e evoluir</h3><p>Produção com observação, correção e melhoria contínua — não uma automação entregue e esquecida.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">Portas de entrada</div><h2>Você pode começar por uma dor específica.</h2></div>
+      <p>Não é necessário “transformar a empresa inteira”. Podemos começar por aquisição, atendimento, uma automação crítica ou um sistema específico e ampliar apenas quando houver evidência.</p>
+    </div>
+    <div class="split">
+      <article class="feature">
+        <div class="feature-label">Aquisição</div>
+        <h3>ChatGPT Ads</h3>
+        <p>A presença paga em assistentes de IA continua sendo uma frente relevante da MXP. A diferença é que ela passa a ser tratada como um canal dentro da operação de aquisição — não como a identidade da empresa inteira.</p>
+        <a class="feature-link" href="/chatgpt-ads/">Ver operação de ChatGPT Ads →</a>
+      </article>
+      <article class="feature">
+        <div class="feature-label">Operação comercial</div>
+        <h3>Agentes de IA</h3>
+        <p>Agentes que atendem, qualificam e consultam sistemas reais continuam sendo uma capacidade central. Agora eles aparecem no contexto correto: como parte de uma operação conectada.</p>
+        <a class="feature-link" href="/agente-ia/">Ver agentes de IA →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">Perguntas frequentes</div><h2>O que muda quando a IA deixa de ser só um chatbot?</h2></div>
+      <p>O foco passa da “resposta bonita” para integração, execução, estado, regras e resultado operacional.</p>
+    </div>
+    <div class="faq">
+      <details><summary>A MXP é agência, consultoria ou software house?</summary><p>A MXP combina competências de aquisição, produto e engenharia para aplicar IA dentro de operações reais. Em alguns projetos isso parece uma implantação; em outros, uma automação, integração ou sistema sob medida. O problema vem antes da categoria.</p></details>
+      <details><summary>Vocês vendem o KAYRUS?</summary><p>Não como produto de prateleira. O KAYRUS representa parte da tecnologia e do aprendizado operacional que a MXP desenvolve internamente. Para clientes, o desenho parte do problema e das fronteiras específicas daquela operação.</p></details>
+      <details><summary>Preciso trocar meu CRM ou minhas ferramentas?</summary><p>Não necessariamente. Sempre que possível, a IA trabalha conectada ao que a empresa já usa. Trocar ferramenta só faz sentido quando a limitação atual é estrutural.</p></details>
+      <details><summary>Até onde um agente pode agir sozinho?</summary><p>Até onde regras, dados, reversibilidade e risco permitem. Aprovações humanas continuam onde existe impacto material, responsabilidade ou ambiguidade que não deve ser automatizada.</p></details>
+      <details><summary>Vocês fazem apenas projetos comerciais?</summary><p>Não. Comercial é uma aplicação importante e já comprovada, mas a mesma lógica de agentes, automação e integração pode ser aplicada a outros processos quando houver um caso de negócio claro.</p></details>
+      <details><summary>Como saber por onde começar?</summary><p>Comece por um fluxo em que a empresa perde tempo, contexto, velocidade ou oportunidade. A primeira etapa é mapear esse trabalho e identificar se o melhor mecanismo é agente, automação, integração ou sistema específico.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="diagnosis" id="diagnostico" aria-labelledby="diagnostico-titulo">
+  <div class="wrap diagnosis-grid">
+    <div>
+      <div class="kicker">Diagnóstico inicial</div>
+      <h2 id="diagnostico-titulo">Onde sua operação perde tempo, contexto ou oportunidades?</h2>
+      <p>Descreva um processo que poderia funcionar melhor. A MXP avalia quais caminhos — agente, integração, automação ou sistema — fazem sentido para o cenário.</p>
+      <div class="diagnosis-points">
+        <div>Comece por um processo, não por uma tecnologia</div>
+        <div>Aproveite seus sistemas e dados existentes</div>
+        <div>Converse com a equipe com contexto desde o início</div>
+      </div>
+    </div>
+    <form class="diagnosis-form" data-diagnosis-form>
+      <label for="mxp-area">Qual área você quer melhorar?
+        <select id="mxp-area" name="area" required>
+          <option value="">Selecione uma área</option>
+          <option value="Comercial e atendimento">Comercial e atendimento</option>
+          <option value="Marketing e aquisição">Marketing e aquisição</option>
+          <option value="Processos internos">Processos internos</option>
+          <option value="Integrações e sistemas">Integrações e sistemas</option>
+          <option value="Outro processo">Outro processo</option>
+        </select>
+      </label>
+      <label for="mxp-problema">O que acontece hoje?
+        <textarea id="mxp-problema" name="problema" minlength="10" maxlength="750" required placeholder="Ex.: recebemos oportunidades por diferentes canais, mas nossa equipe precisa copiar tudo manualmente para o CRM."></textarea>
+      </label>
+      <button class="btn btn-primary" type="submit">Continuar no WhatsApp ↗</button>
+      <p class="note">Você será direcionado ao WhatsApp com a mensagem preenchida. Nada será enviado automaticamente. Não inclua senhas ou dados sensíveis. Consulte nossa <a href="/privacidade/">Política de Privacidade</a>.</p>
+    </form>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <div class="kicker">Próximo passo</div>
+        <h2>Traga um processo real. A gente mapeia onde a IA pode entrar — e onde não deve.</h2>
+        <p>Sem obrigação de começar por um produto específico. O ponto de partida é o trabalho que hoje trava crescimento, atendimento ou operação.</p>
+      </div>
+      <a class="btn btn-primary" href="#diagnostico">Começar o diagnóstico ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <small>© 2026 MXP Digital. IA aplicada à operação empresarial. A MXP é independente e não possui afiliação, patrocínio, endosso ou certificação das plataformas citadas.</small>
+    <div class="footer-links">
+      <a href="/chatgpt-ads/">ChatGPT Ads</a>
+      <a href="/agente-ia/">Agentes de IA</a>
+      <a href="/privacidade/">Privacidade</a>
+      <button type="button" class="consent-settings" data-consent-settings>Preferências de medição</button>
+    </div>
+  </div>
+</footer>
+
+<div class="measurement-consent" data-measurement-consent role="region" aria-label="Medição de conversões" hidden>
+  <p><strong>Medição de anúncios.</strong> Usamos sinais de conversão para entender se campanhas geram contato. Você pode desativar essa medição neste navegador a qualquer momento. <span data-consent-status></span></p>
+  <div class="measurement-consent-actions">
+    <button type="button" data-consent-toggle>Desativar medição</button>
+    <button type="button" class="consent-accept" data-consent-dismiss>Fechar</button>
+  </div>
+</div>
+<script>
+(function(){
+  var banner=document.querySelector('[data-measurement-consent]');
+  if(!banner || !window.mxpMeasurementConsent) return;
+  var status=banner.querySelector('[data-consent-status]');
+  var toggle=banner.querySelector('[data-consent-toggle]');
+  var noticeKey='mxp_oai_measurement_notice';
+
+  function render(){
+    var on=window.mxpMeasurementConsent.enabled();
+    status.textContent=on?'Medição ativa neste navegador.':'Medição desativada neste navegador.';
+    toggle.textContent=on?'Desativar medição':'Ativar medição';
+  }
+  function show(){render();banner.hidden=false;}
+  function hide(){banner.hidden=true;try{localStorage.setItem(noticeKey,'seen')}catch(e){}}
+
+  var seen=null;
+  try{seen=localStorage.getItem(noticeKey)}catch(e){}
+  if(!seen && window.mxpMeasurementConsent.get()===null) show();
+
+  toggle.addEventListener('click',function(){
+    window.mxpMeasurementConsent.set(!window.mxpMeasurementConsent.enabled());
+    render();
+  });
+  banner.querySelector('[data-consent-dismiss]').addEventListener('click',hide);
+  document.querySelectorAll('[data-consent-settings]').forEach(function(btn){
+    btn.addEventListener('click',function(){banner.hidden?show():hide();});
+  });
+
+  function eventId(){
+    if(window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'mxp-'+Date.now()+'-'+Math.random().toString(16).slice(2);
+  }
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(!window.mxpMeasurementConsent.enabled()) return;
+      var id=eventId();
+      try{
+        localStorage.setItem('mxp_last_event_id',id);
+        if(typeof gtag==='function') gtag('event','generate_lead',{method:'WhatsApp',cta_position:(el.textContent||'').trim().slice(0,80),link_url:el.href});
+        if(typeof oaiq==='function') oaiq('measure','lead_created',{type:'customer_action'},{event_id:id});
+      }catch(e){}
+    });
+  });
+})();
+</script>
+<script src="/kayrus-widget.js?v=20260829b"
+        data-api="https://web-production-8e949.up.railway.app"></script>
+
+<script>
+(function () {
+  "use strict";
+  var steps=[
+    {title:"Uma oportunidade chega pelo WhatsApp.",description:"O sistema identifica a origem do contato e reúne o contexto disponível para iniciar o atendimento."},
+    {title:"O agente entende o que a pessoa precisa.",description:"Perguntas relevantes e dados disponíveis ajudam a qualificar o interesse, sem transformar a conversa em um formulário rígido."},
+    {title:"As informações são registradas no CRM.",description:"O histórico e os campos úteis podem ser enviados ao sistema existente, respeitando as regras de integração de cada cliente."},
+    {title:"O time recebe uma oportunidade contextualizada.",description:"A equipe humana assume com informações estruturadas para decidir e continuar o atendimento quando necessário."}
+  ];
+  var buttons=Array.prototype.slice.call(document.querySelectorAll("[data-demo-step]"));
+  var title=document.querySelector("[data-demo-title]");
+  var desc=document.querySelector("[data-demo-description]");
+  var number=document.querySelector("[data-demo-number]");
+  buttons.forEach(function(b){
+    b.addEventListener("click",function(){
+      var i=Number(b.getAttribute("data-demo-step"));
+      if(!steps[i])return;
+      buttons.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});
+      title.textContent=steps[i].title;
+      desc.textContent=steps[i].description;
+      number.textContent="ETAPA 0"+(i+1)+" / 04";
+    });
+  });
+  var f=document.querySelector("[data-diagnosis-form]");
+  if(f)f.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!f.reportValidity())return;
+    var area=f.elements.area.value;
+    var issue=f.elements.problema.value.trim();
+    if(!area||issue.length<10)return;
+    var msg="Olá, MXP! Quero avaliar uma oportunidade de IA na minha operação.%0A%0AÁrea: "+area+"%0AProcesso atual: "+issue+"%0A%0AGostaria de entender os próximos passos.";
+    var url="https://wa.me/19289686271?text="+encodeURIComponent(msg.replace(/%0A/g,"\n"));
+    window.location.href=url;
+  });
+})();
+</script>
+</body>
+</html>
